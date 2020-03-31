@@ -1,5 +1,13 @@
 .idea
 .terraform
 terraform.tfstate
-lambda.zip
+.terraform.tfstate.lock.info
 terraform.tfstate.backup
+dist
+node_modules
+*.zip
+logs
+coverage
+.env
+terraform.tfvars
+lint-result.*
