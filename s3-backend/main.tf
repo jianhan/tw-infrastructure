@@ -4,15 +4,13 @@
 
 # ----------------------------------------------------------------------------------------------------------------------
 # REQUIRE A SPECIFIC TERRAFORM VERSION OR HIGHER
-# This module has been updated with 0.12 syntax, which means it is no longer compatible with any versions below 0.12.
 # ----------------------------------------------------------------------------------------------------------------------
-
 terraform {
   required_version = ">= 0.12"
 }
 
 # ------------------------------------------------------------------------------
-# CONFIGURE OUR AWS CONNECTION
+# CONFIGURE OUR AWS REGION
 # ------------------------------------------------------------------------------
 
 provider "aws" {
@@ -24,7 +22,7 @@ provider "aws" {
 # ------------------------------------------------------------------------------
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "tw-states"
+  bucket = "jian-personal-terraform-states"
 
   # Enable versioning so we can see the full revision history of our
   # state files
@@ -47,7 +45,7 @@ resource "aws_s3_bucket" "terraform_state" {
 # ------------------------------------------------------------------------------
 
 resource "aws_dynamodb_table" "terraform_locks" {
-  name         = "tw-locks"
+  name         = "terraform-locks"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
 
