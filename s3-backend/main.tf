@@ -41,8 +41,8 @@ resource "aws_s3_bucket" "terraform_state" {
 # ------------------------------------------------------------------------------
 # CREATE THE S3 BUCKET to store all lambda zips
 # ------------------------------------------------------------------------------
-resource "aws_s3_bucket" "lambda_zips" {
-  bucket = "jian-personal-lambda-zips"
+resource "aws_s3_bucket" "lambdas" {
+  bucket = "jian-personal-lambdas"
 
   # Enable versioning so we can see the full revision history of our
   # state files
