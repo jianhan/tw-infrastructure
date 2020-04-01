@@ -11,3 +11,6 @@ coverage
 .env
 terraform.tfvars
 lint-result.*
+
+tw-infrastructure-live
+tw-infrastructure-modules
