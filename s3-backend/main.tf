@@ -7,6 +7,13 @@
 # ----------------------------------------------------------------------------------------------------------------------
 terraform {
   required_version = ">= 0.12"
+  backend "s3" {
+    bucket         = "jian-personal-terraform-states"
+    key            = "tw-infrastructure/s3-backend.tfstate"
+    region         = "ap-southeast-2"
+    dynamodb_table = "terraform-locks"
+    encrypt        = true
+  }
 }
 
 # ------------------------------------------------------------------------------
